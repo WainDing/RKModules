@@ -1,0 +1,6 @@
+# ide
+.vscode
+build/pc-linux/*[!sh]
+build/pc-linux/CMakeFiles/
+build/arm-linux/*[!sh]
+build/arm-linux/CMakeFiles/
