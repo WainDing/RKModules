@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MODULE_TAG "codec"
+#define TAG "codec"
 #define CODEC_ALIGN(x, a)         (((x)+(a)-1)&~((a)-1))
 
 RKMediaCodec::RKMediaCodec() {

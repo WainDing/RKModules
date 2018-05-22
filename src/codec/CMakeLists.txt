@@ -7,3 +7,5 @@ set(CODEC_SRC codec.cpp)
 
 add_library(rkmedia_codec STATIC ${CODEC_SRC})
 target_link_libraries(rkmedia_codec rockchip_mpp)
+
+add_subdirectory(test)
