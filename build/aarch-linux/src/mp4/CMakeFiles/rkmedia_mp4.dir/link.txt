@@ -1,0 +1,2 @@
+/usr/bin/ar qc librkmedia_mp4.a  CMakeFiles/rkmedia_mp4.dir/mp4.cpp.o
+/usr/bin/ranlib librkmedia_mp4.a

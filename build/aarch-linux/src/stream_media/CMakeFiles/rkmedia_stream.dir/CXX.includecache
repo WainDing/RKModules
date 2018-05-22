@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tiger/rk-linux/testtmp/LibRKMedia/LibRKMedia-master/src/stream_media/stream_media.cpp
+stream_media.h
+/home/tiger/rk-linux/testtmp/LibRKMedia/LibRKMedia-master/src/stream_media/stream_media.h
+
+/home/tiger/rk-linux/testtmp/LibRKMedia/LibRKMedia-master/src/stream_media/stream_media.h
+

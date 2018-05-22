@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../include/cam.h
+linux/videodev2.h
+-
+
+../../include/log.h
+stdio.h
+-
+
+/home/tiger/rk-linux/testtmp/LibRKMedia/LibRKMedia-master/src/cam/test/cam_test.cpp
+cam.h
+/home/tiger/rk-linux/testtmp/LibRKMedia/LibRKMedia-master/src/cam/test/cam.h
+log.h
+/home/tiger/rk-linux/testtmp/LibRKMedia/LibRKMedia-master/src/cam/test/log.h
+

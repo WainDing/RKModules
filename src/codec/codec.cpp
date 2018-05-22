@@ -7,7 +7,7 @@
 #define CODEC_ALIGN(x, a)         (((x)+(a)-1)&~((a)-1))
 
 RKMediaCodec::RKMediaCodec() {
-
+    
 }
 
 RKMediaCodec::~RKMediaCodec() {

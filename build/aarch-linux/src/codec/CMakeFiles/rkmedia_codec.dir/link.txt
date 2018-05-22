@@ -1,0 +1,2 @@
+/usr/bin/ar qc librkmedia_codec.a  CMakeFiles/rkmedia_codec.dir/codec.cpp.o
+/usr/bin/ranlib librkmedia_codec.a

@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tiger/rk-linux/testtmp/LibRKMedia/LibRKMedia-master/demo/video_encode2push_rtsp.cpp
+stdio.h
+-
+
