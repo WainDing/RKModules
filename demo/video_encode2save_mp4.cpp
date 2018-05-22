@@ -10,7 +10,7 @@
         log(TAG,"%s failed",fun);\
         return -1;\
     } else {\
-        log(TAG, "%s success");\
+        log(TAG, "%s success",fun);\
     }
 
 #define W 1280
@@ -23,9 +23,9 @@ int main(int argc, char **argv) {
     RKMediaMp4Context mp4;
 
     log(TAG, "video_encode2save_mp4");
-    ret = cam.Init("/dev/video0", MPP_FMT_YUV422_YUYV, W, H);
+    ret = cam.Init("/dev/video0", V4L2_PIX_FMT_YUYV, W, H);
     RET_VAL(ret, "cam.Init");
-    ret = codec.Init(MPP_FMT_YUV420SP, W, H);
+    ret = codec.Init(MPP_FMT_YUV422_YUYV, W, H);
     RET_VAL(ret, "codec.Init");
     ret = mp4.CreateMp4File("test.mp4", W, H, 90000, 30);
     RET_VAL(ret, "mp4.CreateMp4File");

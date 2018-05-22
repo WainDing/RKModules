@@ -154,13 +154,6 @@ MPP_RET RKMediaCodec::Init(MppFrameFormat fmt, int w, int h) {
         return MPP_NOK;
     }
 
-    ret = mpp_frame_init(&_frm);
-    mpp_frame_set_width(_frm, _w);
-    mpp_frame_set_height(_frm, _h);
-    mpp_frame_set_hor_stride(_frm, _hor_stride);
-    mpp_frame_set_ver_stride(_frm, _ver_stride);
-    mpp_frame_set_fmt(_frm, _fmt);
-    mpp_frame_set_eos(_frm, 0);
 
     return MPP_OK;
 }
@@ -178,6 +171,8 @@ MPP_RET RKMediaCodec::Deinit() {
         mpp_destroy(_ctx);
         _ctx = NULL;
     }
+
+    mpp_buffer_put(_frm_buf);
 
     return MPP_OK;
 }
@@ -255,6 +250,15 @@ void RKMediaCodec::read_yuv_image(RK_U8 *src, RK_U8 *dst){
 MPP_RET RKMediaCodec::Encode(RK_U8 *data, RK_U32 dataSize, MppPacket *pkt) {
     MPP_RET ret = MPP_OK;
     MppPacket packet;
+
+    ret = mpp_frame_init(&_frm);
+    mpp_frame_set_width(_frm, _w);
+    mpp_frame_set_height(_frm, _h);
+    mpp_frame_set_hor_stride(_frm, _hor_stride);
+    mpp_frame_set_ver_stride(_frm, _ver_stride);
+    mpp_frame_set_fmt(_frm, _fmt);
+    mpp_frame_set_buffer(_frm, _frm_buf);
+    mpp_frame_set_eos(_frm, 0);
 
     void *ptr = mpp_buffer_get_ptr(_frm_buf);
     read_yuv_image(data, (RK_U8 *)ptr);

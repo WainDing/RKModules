@@ -78,19 +78,19 @@ int RKMediaCam::Init(const char *dev, unsigned int v4l2Fmt, int w, int h) {
     if (fmt.fmt.pix.pixelformat != v4l2Fmt ||
         fmt.fmt.pix.width != _w ||
         fmt.fmt.pix.height != _h) {
-        log("cam", "dev %s doesn't support fmt:%c%c%c%c w:%d h:%d",
+        log("cam", "dev %s doesn't support fmt:%c%c%c%c w:%d h:%d",dev ,
          fmt.fmt.pix.pixelformat & 0xff, (fmt.fmt.pix.pixelformat >> 8) & 0xff,
          (fmt.fmt.pix.pixelformat >> 16) & 0xff, (fmt.fmt.pix.pixelformat >> 24) & 0xff, _w, _h);
 
          return -1;
     }
 
-    log("cam", "dev %s support fmt:%c%c%c%c w:%d h:%d",
+    log("cam", "dev %s support fmt:%c%c%c%c w:%d h:%d", dev ,
          fmt.fmt.pix.pixelformat & 0xff, (fmt.fmt.pix.pixelformat >> 8) & 0xff,
          (fmt.fmt.pix.pixelformat >> 16) & 0xff, (fmt.fmt.pix.pixelformat >> 24) & 0xff, _w, _h);
     
     memset(&req_bufs, 0, sizeof(req_bufs));
-    req_bufs.count = 25;
+    req_bufs.count = 10;
     req_bufs.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     req_bufs.memory = V4L2_MEMORY_MMAP;
 
@@ -185,8 +185,7 @@ int RKMediaCam::Deinit() {
 int RKMediaCam::GetFrame(CameraBuf *buf) {
     int ret = 0;
     struct v4l2_buffer vbuf;
-
-    memset(&buf, 0, sizeof(vbuf));
+    memset(&vbuf, 0, sizeof(vbuf));
     vbuf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
     vbuf.memory = V4L2_MEMORY_MMAP;
 
@@ -200,7 +199,6 @@ int RKMediaCam::GetFrame(CameraBuf *buf) {
     buf->dataLen = _bufList[vbuf.index].dataLen;
     buf->vbuf = vbuf;
     buf->bufIndex = vbuf.index;
-
     return 0;
 }
 

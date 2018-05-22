@@ -38,6 +38,7 @@ int main(int argc, char **argv) {
     CHK_RET(ret, "codec.GetSpsPps");
 
     log(TAG, "sps:%p size:%d", sps, spsSize);
+    fwrite(sps, 1, spsSize, fout);
 
     int frmSize = 1280 * 720 * 2;
     unsigned char *data = (unsigned char *)malloc(frmSize);
@@ -64,6 +65,10 @@ int main(int argc, char **argv) {
             fwrite(ptr, 1, len, fout);
 	    mpp_packet_deinit(&pkt);
         }
+
+       if (eos) {
+          break;
+       }
     }
 
     ret = codec.Deinit();

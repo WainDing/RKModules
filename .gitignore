@@ -1,6 +1,8 @@
 # ide
 .vscode
 build/pc-linux/*[!sh]
-build/pc-linux/CMakeFiles/
 build/arm-linux/*[!sh]
-build/arm-linux/CMakeFiles/
+build/aarch-linux/*[!sh]
+build/aarch-linux/src/*
+build/aarch-linux/demo/*
+build/arm-linux/CMakeFiles/*
