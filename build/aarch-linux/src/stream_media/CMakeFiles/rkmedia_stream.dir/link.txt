@@ -1,2 +1,0 @@
-/usr/bin/ar qc librkmedia_stream.a  CMakeFiles/rkmedia_stream.dir/stream_media.cpp.o
-/usr/bin/ranlib librkmedia_stream.a

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "stream_media.h"
 
 #define log(fmt,...)\
     do {\

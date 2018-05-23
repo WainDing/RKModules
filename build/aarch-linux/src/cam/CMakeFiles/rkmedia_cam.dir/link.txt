@@ -1,2 +1,0 @@
-/usr/bin/ar qc librkmedia_cam.a  CMakeFiles/rkmedia_cam.dir/cam.cpp.o
-/usr/bin/ranlib librkmedia_cam.a

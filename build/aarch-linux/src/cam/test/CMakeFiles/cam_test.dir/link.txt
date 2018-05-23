@@ -1,1 +1,0 @@
-/home/tiger/rk3399_linux/custorm/prebuilts/gcc/linux-x86/aarch64/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-g++    -rdynamic CMakeFiles/cam_test.dir/cam_test.cpp.o  -o cam_test  -L/home/tiger/rk-linux/testtmp/LibRKMedia/LibRKMedia-master/src/cam -Wl,-rpath,/home/tiger/rk-linux/testtmp/LibRKMedia/LibRKMedia-master/src/cam ../librkmedia_cam.a 
