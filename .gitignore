@@ -3,3 +3,4 @@
 build/pc-linux/*[!sh]
 build/arm-linux/*[!sh]
 build/aarch-linux/*[!sh]
+build/aarch-linux/CMakeFiles/
